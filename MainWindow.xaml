@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
-    x:Class="AppBarButtonIsEnabled.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:AppBarButtonIsEnabled"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+<Window x:Class="AppBarButtonIsEnabled.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:AppBarButtonIsEnabled"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
 
     <StackPanel Padding="20,60"
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock>1. Observe AppBarButton being disabled and enabled every two seconds.</TextBlock>
+        <TextBlock>2. Click the Go To Other Page button.</TextBlock>
+        <TextBlock>3. When CanExecute is false, click Back.</TextBlock>
+        <TextBlock>4. AppBarButton stays disabled.</TextBlock>
+
         <StackPanel Orientation="Horizontal">
+            <Button Click="NavigateToPageWithButtons">Go to Page With Buttons</Button>
+            <Button Click="NavigateToThatOtherPage">Go to Other Page</Button>
             <Button Click="GoBack"
                     IsEnabled="{x:Bind AFrame.CanGoBack, Mode=OneWay}">&lt;- Back</Button>
             <Button Click="GoForward"
