@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AppBarButtonIsEnabled (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AppBarButtonIsEnabled (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
