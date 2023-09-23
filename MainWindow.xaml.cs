@@ -22,10 +22,15 @@ namespace AppBarButtonIsEnabled;
 /// </summary>
 public sealed partial class MainWindow : Window {
     public MainWindow() {
-        this.InitializeComponent();
+        InitializeComponent();
+
+        AppWindow.ResizeClient(new(640, 480));
     }
 
-    private void myButton_Click(object sender, RoutedEventArgs e) {
-        myButton.Content = "Clicked";
+    private void GoBack(object sender, RoutedEventArgs e) {
+        if (AFrame.CanGoBack) AFrame.GoBack();
+    }
+    private void GoForward(object sender, RoutedEventArgs e) {
+        if (AFrame.CanGoForward) AFrame.GoForward();
     }
 }

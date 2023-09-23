@@ -8,7 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+    <StackPanel Padding="20,60"
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Horizontal">
+            <Button Click="GoBack"
+                    IsEnabled="{x:Bind AFrame.CanGoBack, Mode=OneWay}">&lt;- Back</Button>
+            <Button Click="GoForward"
+                    IsEnabled="{x:Bind AFrame.CanGoForward, Mode=OneWay}">Forward -&gt;</Button>
+        </StackPanel>
+        <Frame x:Name="AFrame" />
     </StackPanel>
 </Window>
